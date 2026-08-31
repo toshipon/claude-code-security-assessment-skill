@@ -1,0 +1,16 @@
+{
+  "name": "toshipon-security",
+  "owner": {
+    "name": "toshipon",
+    "url": "https://github.com/toshipon"
+  },
+  "plugins": [
+    {
+      "name": "security-assessment",
+      "source": "./plugins/security-assessment",
+      "description": "Hypothesis-driven security assessment for Web/SaaS: system model, threat model, falsifiable hypotheses, evidence-backed findings, and a publication gate that suppresses false positives.",
+      "version": "0.1.0",
+      "author": { "name": "toshipon" }
+    }
+  ]
+}

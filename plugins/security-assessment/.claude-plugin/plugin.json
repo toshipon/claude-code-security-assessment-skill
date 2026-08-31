@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "security-assessment",
+  "displayName": "Security Assessment",
+  "version": "0.1.0",
+  "description": "Hypothesis-driven security assessment for Web/SaaS systems. Builds a system model, maps attack surface, threat-models, generates and falsifies vulnerability hypotheses, then produces evidence-backed findings, an executive summary and a remediation plan.",
+  "author": {
+    "name": "toshipon",
+    "url": "https://github.com/toshipon"
+  },
+  "homepage": "https://github.com/toshipon/claude-code-security-assessment-skill",
+  "repository": "https://github.com/toshipon/claude-code-security-assessment-skill",
+  "license": "MIT",
+  "keywords": [
+    "security", "security-assessment", "threat-modeling", "attack-surface",
+    "penetration-testing", "owasp", "asvs", "cwe", "appsec", "cloud-security"
+  ]
+}

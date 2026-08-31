@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Engagement workspaces must never be committed — they hold customer evidence.
+assessment-*/
+engagement-*/
+*-ws/

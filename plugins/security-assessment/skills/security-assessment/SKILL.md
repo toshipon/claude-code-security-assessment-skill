@@ -118,7 +118,7 @@ Phases 1–3 are always run. Phase 4 onward loops per attack surface.
   │  [8] Rate ───────────→ T × E × B × X, guardrails applied
   └──← more surfaces? loop
    ↓
-  [9] Report              → technical + executive + remediation plan
+  [9] Report              → technical + executive + remediation plan + prevention/CI-CD plan
   [10] Remediation review → re-assess after fixes
   [11] Retrospective      → improve this skill, sanitized
 ```
@@ -151,7 +151,9 @@ lifecycle and the falsification requirement that the rest of the loop depends on
 ### Phase 9–11 — Deliverables and learning
 
 `templates/report-technical.md`, `templates/report-executive.md`, `templates/remediation-plan.md`,
-then `modules/remediation-review.md` and `references/retrospective.md`.
+then `modules/prevention-cicd.md` with `templates/prevention-plan.md` (turn each confirmed finding
+class into a durable CI/CD guardrail — the report is incomplete without it), then
+`modules/remediation-review.md` and `references/retrospective.md`.
 
 ---
 
@@ -176,6 +178,7 @@ read inline, or dispatched to a subagent with the module path and the workspace 
 | IAM policies, roles, cross-account trust | `modules/iam-assessment.md` |
 | Terraform / CloudFormation / Pulumi / k8s | `modules/iac-assessment.md` |
 | GitHub Actions / GitLab CI / CD pipelines | `modules/cicd-assessment.md` |
+| *(always, Phase 9 — turn findings into guardrails)* | `modules/prevention-cicd.md` |
 | *(after fixes land)* | `modules/remediation-review.md` |
 
 **Technology-specific detection patterns are not duplicated here.** They live in the companion
@@ -242,10 +245,16 @@ claims `CONFIRMED` with an open UNKNOWN on its path, or claims Critical without 
 | Technical Assessment Report | Engineers | `templates/report-technical.md` |
 | Executive Summary | Execs / PM | `templates/report-executive.md` |
 | Remediation Plan | Eng management | `templates/remediation-plan.md` |
+| Prevention & CI/CD Plan | Eng / platform | `templates/prevention-plan.md` (via `modules/prevention-cicd.md`) |
 
 ```bash
 $SA report technical && $SA report executive && $SA report remediation
 ```
+
+The prevention plan is authored from `templates/prevention-plan.md` (there is no `sa report`
+generator for it — it is derived, per `modules/prevention-cicd.md`, by mapping each confirmed finding
+class to a guardrail). A report that says what is broken but not what mechanism stops the next
+instance is half a deliverable.
 
 Every report carries an **Assessment Coverage** section: what was assessed, what was *not*, and why
 (out of scope / no authorization / no access / UNKNOWN). A report without it overstates its own

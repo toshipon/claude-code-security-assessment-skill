@@ -26,8 +26,10 @@ and the vendor advisory (never only the NVD summary) for CVE impact.
 The `security-audit` skill holds technology-specific detection patterns
 ([`toshipon/claude-code-security-audit-skill`](https://github.com/toshipon/claude-code-security-audit-skill)).
 It is an **optional dependency** — install it to sharpen detection, or work without it and retrieve
-from the sources above. Paths below are relative to that skill's own directory, wherever it is
-installed. Reuse it — do not duplicate it.
+from the sources above. It is a plain skill repository, not a plugin marketplace: install it with
+`git clone https://github.com/toshipon/claude-code-security-audit-skill.git ~/.claude/skills/security-audit`
+(the `/plugin marketplace add` command does not apply to it). Paths below are relative to that
+skill's own directory, wherever it is installed. Reuse it — do not duplicate it.
 
 ```
 security-audit/references/

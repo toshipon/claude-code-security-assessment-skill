@@ -32,10 +32,11 @@ a customer who believes they were assessed when they were not is worse off than 
 ```
 
 Optionally add the companion pattern library — the skill works without it, but detection is sharper
-with it:
+with it. It is a plain skill repository (not a plugin marketplace), so install it into
+`~/.claude/skills/` rather than with `/plugin marketplace add`:
 
-```
-/plugin marketplace add toshipon/claude-code-security-audit-skill
+```bash
+git clone https://github.com/toshipon/claude-code-security-audit-skill.git ~/.claude/skills/security-audit
 ```
 
 Then start an assessment by asking Claude for one, or invoke `/security-assessment` directly.

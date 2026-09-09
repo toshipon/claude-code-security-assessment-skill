@@ -3,6 +3,12 @@
 Structural changes to this skill. Motivating engagements are referenced by engagement ID only —
 never by customer name (`references/retrospective.md`).
 
+## 2026-09-09
+
+- README / `references/knowledge-sources.md`: the companion `security-audit` skill is a plain skill
+  repository with no `.claude-plugin/marketplace.json`, so `/plugin marketplace add` fails on it.
+  Install instructions now use `git clone` into `~/.claude/skills/security-audit`.
+
 ## 2026-08-31 — initial
 
 - Orchestrator `SKILL.md`: 11-phase loop, module routing table, publication bar, assessment stack.
